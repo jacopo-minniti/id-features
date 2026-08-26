@@ -1,0 +1,7 @@
+.venv/
+.uv-cache/
+.test-venv/
+.pytest_cache/
+results/
+__pycache__/
+*.py[cod]
