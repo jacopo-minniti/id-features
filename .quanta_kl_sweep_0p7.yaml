@@ -1,0 +1,51 @@
+task:
+  name: number_naming
+  language: english
+  data_splits: extreme_generalization_v2
+  training_size: 300
+  eval_size: 16384
+  eval_strategy: balanced
+  eval_samples: 300
+  split_seed: 0
+  max_number: 999999
+  dataset_name: SakanaAI/NumberNameQuanta
+model:
+  architecture: decoder_transformer
+  n_layers: 3
+  d_model: 32
+  n_heads: 1
+  mlp_ratio: 2
+  dropout: 0.0
+  max_seq_len: 20
+training:
+  steps: 5000
+  batch_size: 300
+  lr: 0.03
+  optimizer: sgd
+  scheduler: constant
+  weight_decay: 0.0
+discovery:
+  checkpoint_every: 125
+  max_candidates_per_layer: 16
+  candidate_fit_steps: 40
+  minimum_candidate_gain: 0.05
+  q_learning_rate: 0.003
+  q_microbatch_size: 300
+  q_attention_rank: 8
+  q_attention_value_dim: 16
+  q_attention_direct_residual: true
+  q_writer_minimum: 4
+  q_writer_overcomplete_factor: 4
+  q_writer_maximum: 32
+  q_functional_rank_energy: 0.90
+  q_writer_average_k: 2.0
+  q_writer_activation: jumprelu
+  q_writer_sparsity: l0_target
+  q_writer_jump_threshold: 0.10
+  q_writer_jump_bandwidth: 0.10
+  q_writer_l0_target: 3.0
+  q_writer_l0_weight: 1.0
+  q_writer_l0_ramp_steps: 1000
+  q_output_kl_weight: 0.7
+  maximum_edge_closure_cost: 0.10
+  detach_gate_gradients: true

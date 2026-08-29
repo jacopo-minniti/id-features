@@ -1,0 +1,42 @@
+Starting manifold-geometry experiment in /home/jacopominniti_sakana_ai/id-features
+Results: results/manifold-geometry-density-168483
+Controls: D=64 m=256 d=16 N=4096,16384,65536 activity=1 gamma=1 repeats=3 ranks<=64
+[1/36] manifold-geometry complete: kind=sphere;d=16;N=4096;s=0;gamma=0
+[2/36] manifold-geometry complete: kind=residual;d=16;N=4096;s=0;gamma=0
+[3/36] manifold-geometry complete: kind=sphere;d=16;N=16384;s=0;gamma=0
+[4/36] manifold-geometry complete: kind=residual;d=16;N=16384;s=0;gamma=0
+[5/36] manifold-geometry complete: kind=sphere;d=16;N=65536;s=0;gamma=0
+[6/36] manifold-geometry complete: kind=residual;d=16;N=65536;s=0;gamma=0
+[7/36] manifold-geometry complete: kind=sparse;d=16;N=4096;s=16;gamma=1
+[8/36] manifold-geometry complete: kind=combined;d=16;N=4096;s=16;gamma=1
+[9/36] manifold-geometry complete: kind=sparse;d=16;N=16384;s=16;gamma=1
+[10/36] manifold-geometry complete: kind=combined;d=16;N=16384;s=16;gamma=1
+[11/36] manifold-geometry complete: kind=sparse;d=16;N=65536;s=16;gamma=1
+[12/36] manifold-geometry complete: kind=combined;d=16;N=65536;s=16;gamma=1
+[13/36] manifold-geometry complete: kind=sphere;d=16;N=4096;s=0;gamma=0
+[14/36] manifold-geometry complete: kind=residual;d=16;N=4096;s=0;gamma=0
+[15/36] manifold-geometry complete: kind=sphere;d=16;N=16384;s=0;gamma=0
+[16/36] manifold-geometry complete: kind=residual;d=16;N=16384;s=0;gamma=0
+[17/36] manifold-geometry complete: kind=sphere;d=16;N=65536;s=0;gamma=0
+[18/36] manifold-geometry complete: kind=residual;d=16;N=65536;s=0;gamma=0
+[19/36] manifold-geometry complete: kind=sparse;d=16;N=4096;s=16;gamma=1
+[20/36] manifold-geometry complete: kind=combined;d=16;N=4096;s=16;gamma=1
+[21/36] manifold-geometry complete: kind=sparse;d=16;N=16384;s=16;gamma=1
+[22/36] manifold-geometry complete: kind=combined;d=16;N=16384;s=16;gamma=1
+[23/36] manifold-geometry complete: kind=sparse;d=16;N=65536;s=16;gamma=1
+[24/36] manifold-geometry complete: kind=combined;d=16;N=65536;s=16;gamma=1
+[25/36] manifold-geometry complete: kind=sphere;d=16;N=4096;s=0;gamma=0
+[26/36] manifold-geometry complete: kind=residual;d=16;N=4096;s=0;gamma=0
+[27/36] manifold-geometry complete: kind=sphere;d=16;N=16384;s=0;gamma=0
+[28/36] manifold-geometry complete: kind=residual;d=16;N=16384;s=0;gamma=0
+[29/36] manifold-geometry complete: kind=sphere;d=16;N=65536;s=0;gamma=0
+[30/36] manifold-geometry complete: kind=residual;d=16;N=65536;s=0;gamma=0
+[31/36] manifold-geometry complete: kind=sparse;d=16;N=4096;s=16;gamma=1
+[32/36] manifold-geometry complete: kind=combined;d=16;N=4096;s=16;gamma=1
+[33/36] manifold-geometry complete: kind=sparse;d=16;N=16384;s=16;gamma=1
+[34/36] manifold-geometry complete: kind=combined;d=16;N=16384;s=16;gamma=1
+[35/36] manifold-geometry complete: kind=sparse;d=16;N=65536;s=16;gamma=1
+[36/36] manifold-geometry complete: kind=combined;d=16;N=65536;s=16;gamma=1
+Wrote results to results/manifold-geometry-density-168483
+Wrote results/manifold-geometry-density-168483/overview.png
+Read results/manifold-geometry-density-168483/interpretation.md after inspecting gride_profiles.csv.

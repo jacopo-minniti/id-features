@@ -20,6 +20,9 @@ class GrideProfile:
     scales: FloatArray
     ids: FloatArray
     errors: FloatArray
+    mean_same_support_fraction: FloatArray | None = None
+    all_same_support_fraction: FloatArray | None = None
+    neighbor_indices: NDArray[np.int_] | None = None
 
 
 @dataclass(frozen=True)
@@ -32,7 +35,29 @@ class LinearAccessibility:
     feature_aurocs: FloatArray
 
 
-def measure_gride(representations: FloatArray, range_max: int, n_jobs: int = 1) -> GrideProfile:
+def _neighbor_support_purity(
+    neighbor_indices: NDArray[np.int_], support_ids: NDArray[np.int_], ranks: NDArray[np.int_]
+) -> tuple[FloatArray, FloatArray]:
+    """Measure mean neighbor purity and fully pure neighborhoods at every rank."""
+
+    if neighbor_indices.shape[0] != len(support_ids):
+        raise ValueError("neighbor indices and support IDs must have the same sample count")
+    mean_same: list[float] = []
+    all_same: list[float] = []
+    for rank in ranks:
+        neighbors = neighbor_indices[:, 1 : int(rank) + 1]
+        same = support_ids[neighbors] == support_ids[:, None]
+        mean_same.append(float(same.mean()))
+        all_same.append(float(same.all(axis=1).mean()))
+    return np.asarray(mean_same), np.asarray(all_same)
+
+
+def measure_gride(
+    representations: FloatArray,
+    range_max: int,
+    n_jobs: int = 1,
+    support_ids: NDArray[np.int_] | None = None,
+) -> GrideProfile:
     """Estimate multi-scale ID with DADApy's generalized-ratios estimator."""
 
     # Keep the expensive optional backend out of linear-probe-only imports and tests.
@@ -47,11 +72,21 @@ def measure_gride(representations: FloatArray, range_max: int, n_jobs: int = 1) 
     ids, errors, physical_scales = data.return_id_scaling_gride(range_max=range_max)
     # DADApy returns comparisons (1,2), (2,4), ... so their upper ranks are 2,4,...
     ranks = 2 ** np.arange(1, len(ids) + 1)
+    mean_same = None
+    all_same = None
+    if support_ids is not None:
+        support_ids = np.asarray(support_ids, dtype=np.int_)
+        if support_ids.shape != (len(representations),):
+            raise ValueError("support_ids must have one entry per representation")
+        mean_same, all_same = _neighbor_support_purity(data.dist_indices, support_ids, ranks)
     return GrideProfile(
         ranks=ranks,
         scales=np.asarray(physical_scales, dtype=np.float64),
         ids=np.asarray(ids, dtype=np.float64),
         errors=np.asarray(errors, dtype=np.float64),
+        mean_same_support_fraction=mean_same,
+        all_same_support_fraction=all_same,
+        neighbor_indices=np.asarray(data.dist_indices, dtype=np.int_),
     )
 
 

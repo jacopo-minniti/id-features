@@ -1,0 +1,171 @@
+Starting Part 1 fixed-support GRIDE validation in /home/jacopominniti_sakana_ai/id-features
+Results: results/part1-fixed-support-169169
+Controls: D=32 m=256 k={1,2,4,8,16} B=1 N={1024,4096,16384} repeats=5 ranks<=64
+[1/75] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=1;N=1024
+[2/75] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=1;N=4096
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[3/75] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=1;N=16384
+[4/75] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=1;N=1024
+[5/75] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=1;N=4096
+[6/75] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=1;N=16384
+[7/75] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=1;N=1024
+[8/75] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=1;N=4096
+[9/75] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=1;N=16384
+[10/75] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=1;N=1024
+[11/75] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=1;N=4096
+[12/75] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=1;N=16384
+[13/75] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=1;N=1024
+[14/75] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=1;N=4096
+[15/75] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=1;N=16384
+[16/75] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=1;N=1024
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[17/75] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=1;N=4096
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/id_estimation.py:409: RuntimeWarning: divide by zero encountered in divide
+  mus = self.distances[:, nn_ranks[1:]] / self.distances[:, nn_ranks[:-1]]
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:245: RuntimeWarning: invalid value encountered in multiply
+  tmp = np.multiply(factor1**2, factor2)
+[18/75] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=1;N=16384
+[19/75] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=1;N=1024
+[20/75] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=1;N=4096
+[21/75] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=1;N=16384
+[22/75] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=1;N=1024
+[23/75] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=1;N=4096
+[24/75] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=1;N=16384
+[25/75] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=1;N=1024
+[26/75] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=1;N=4096
+[27/75] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=1;N=16384
+[28/75] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=1;N=1024
+[29/75] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=1;N=4096
+[30/75] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=1;N=16384
+[31/75] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=1;N=1024
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[32/75] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=1;N=4096
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/id_estimation.py:409: RuntimeWarning: divide by zero encountered in divide
+  mus = self.distances[:, nn_ranks[1:]] / self.distances[:, nn_ranks[:-1]]
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:245: RuntimeWarning: invalid value encountered in multiply
+  tmp = np.multiply(factor1**2, factor2)
+[33/75] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=1;N=16384
+[34/75] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=1;N=1024
+[35/75] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=1;N=4096
+[36/75] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=1;N=16384
+[37/75] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=1;N=1024
+[38/75] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=1;N=4096
+[39/75] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=1;N=16384
+[40/75] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=1;N=1024
+[41/75] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=1;N=4096
+[42/75] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=1;N=16384
+[43/75] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=1;N=1024
+[44/75] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=1;N=4096
+[45/75] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=1;N=16384
+[46/75] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=1;N=1024
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[47/75] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=1;N=4096
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/id_estimation.py:409: RuntimeWarning: divide by zero encountered in divide
+  mus = self.distances[:, nn_ranks[1:]] / self.distances[:, nn_ranks[:-1]]
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:245: RuntimeWarning: invalid value encountered in multiply
+  tmp = np.multiply(factor1**2, factor2)
+[48/75] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=1;N=16384
+[49/75] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=1;N=1024
+[50/75] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=1;N=4096
+[51/75] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=1;N=16384
+[52/75] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=1;N=1024
+[53/75] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=1;N=4096
+[54/75] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=1;N=16384
+[55/75] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=1;N=1024
+[56/75] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=1;N=4096
+[57/75] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=1;N=16384
+[58/75] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=1;N=1024
+[59/75] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=1;N=4096
+[60/75] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=1;N=16384
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[61/75] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=1;N=1024
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/id_estimation.py:409: RuntimeWarning: divide by zero encountered in divide
+  mus = self.distances[:, nn_ranks[1:]] / self.distances[:, nn_ranks[:-1]]
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:245: RuntimeWarning: invalid value encountered in multiply
+  tmp = np.multiply(factor1**2, factor2)
+[62/75] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=1;N=4096
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/id_estimation.py:409: RuntimeWarning: divide by zero encountered in divide
+  mus = self.distances[:, nn_ranks[1:]] / self.distances[:, nn_ranks[:-1]]
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:245: RuntimeWarning: invalid value encountered in multiply
+  tmp = np.multiply(factor1**2, factor2)
+[63/75] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=1;N=16384
+[64/75] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=1;N=1024
+[65/75] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=1;N=4096
+[66/75] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=1;N=16384
+[67/75] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=1;N=1024
+[68/75] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=1;N=4096
+[69/75] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=1;N=16384
+[70/75] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=1;N=1024
+[71/75] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=1;N=4096
+[72/75] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=1;N=16384
+[73/75] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=1;N=1024
+[74/75] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=1;N=4096
+[75/75] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=1;N=16384
+Wrote results to results/part1-fixed-support-169169
+Wrote results/part1-fixed-support-169169/overview.png
+Read results/part1-fixed-support-169169/interpretation.md after inspecting gride_profiles.csv.

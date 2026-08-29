@@ -1,0 +1,18 @@
+Starting manifold-geometry experiment in /home/jacopominniti_sakana_ai/id-features
+Results: results/manifold-geometry-density-followup
+Controls: D=64 m=256 d=16 N=4096 activity=1 gamma=1 repeats=3 ranks<=64
+[1/12] manifold-geometry complete: kind=sphere;d=16;N=4096;s=0;gamma=0
+[2/12] manifold-geometry complete: kind=residual;d=16;N=4096;s=0;gamma=0
+[3/12] manifold-geometry complete: kind=sparse;d=16;N=4096;s=16;gamma=1
+[4/12] manifold-geometry complete: kind=combined;d=16;N=4096;s=16;gamma=1
+[5/12] manifold-geometry complete: kind=sphere;d=16;N=4096;s=0;gamma=0
+[6/12] manifold-geometry complete: kind=residual;d=16;N=4096;s=0;gamma=0
+[7/12] manifold-geometry complete: kind=sparse;d=16;N=4096;s=16;gamma=1
+[8/12] manifold-geometry complete: kind=combined;d=16;N=4096;s=16;gamma=1
+[9/12] manifold-geometry complete: kind=sphere;d=16;N=4096;s=0;gamma=0
+[10/12] manifold-geometry complete: kind=residual;d=16;N=4096;s=0;gamma=0
+[11/12] manifold-geometry complete: kind=sparse;d=16;N=4096;s=16;gamma=1
+[12/12] manifold-geometry complete: kind=combined;d=16;N=4096;s=16;gamma=1
+Wrote results to results/manifold-geometry-density-followup
+Wrote results/manifold-geometry-density-followup/overview.png
+Read results/manifold-geometry-density-followup/interpretation.md after inspecting gride_profiles.csv.

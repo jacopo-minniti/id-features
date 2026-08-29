@@ -31,3 +31,23 @@ def test_load_ratio_design_crosses_k_and_d_at_fixed_capacity() -> None:
         (32, 1),
         (32, 2),
     }
+
+
+def test_support_pool_design_crosses_k_b_and_n() -> None:
+    config = ExperimentConfig(
+        experiment="support-pool",
+        active_features=(1, 2),
+        support_pool_sizes=(1, 4),
+        id_sample_values=(128, 256),
+        gride_range_max=64,
+    )
+    conditions = conditions_for(config)
+    assert {
+        (condition.k, condition.support_pool_size, condition.id_sample_count)
+        for condition in conditions
+    } == {
+        (k, b, n)
+        for k in (1, 2)
+        for b in (1, 4)
+        for n in (128, 256)
+    }

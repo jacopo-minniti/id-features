@@ -1,0 +1,26 @@
+Starting structured support-pool task: k=4 rho=0.9
+B={1,16,256,4096} N={4096,16384} repeats=3 ranks<=64
+[1/24] k=4 rho=0.9 B=1 N=4096 repeat=1/3 ID2=3.921
+[2/24] k=4 rho=0.9 B=1 N=16384 repeat=1/3 ID2=4.054
+[3/24] k=4 rho=0.9 B=16 N=4096 repeat=1/3 ID2=3.693
+[4/24] k=4 rho=0.9 B=16 N=16384 repeat=1/3 ID2=3.882
+[5/24] k=4 rho=0.9 B=256 N=4096 repeat=1/3 ID2=2.226
+[6/24] k=4 rho=0.9 B=256 N=16384 repeat=1/3 ID2=3.091
+[7/24] k=4 rho=0.9 B=4096 N=4096 repeat=1/3 ID2=11.267
+[8/24] k=4 rho=0.9 B=4096 N=16384 repeat=1/3 ID2=2.235
+[9/24] k=4 rho=0.9 B=1 N=4096 repeat=2/3 ID2=3.906
+[10/24] k=4 rho=0.9 B=1 N=16384 repeat=2/3 ID2=4.026
+[11/24] k=4 rho=0.9 B=16 N=4096 repeat=2/3 ID2=3.588
+[12/24] k=4 rho=0.9 B=16 N=16384 repeat=2/3 ID2=3.855
+[13/24] k=4 rho=0.9 B=256 N=4096 repeat=2/3 ID2=2.319
+[14/24] k=4 rho=0.9 B=256 N=16384 repeat=2/3 ID2=3.023
+[15/24] k=4 rho=0.9 B=4096 N=4096 repeat=2/3 ID2=10.842
+[16/24] k=4 rho=0.9 B=4096 N=16384 repeat=2/3 ID2=2.227
+[17/24] k=4 rho=0.9 B=1 N=4096 repeat=3/3 ID2=3.829
+[18/24] k=4 rho=0.9 B=1 N=16384 repeat=3/3 ID2=4.106
+[19/24] k=4 rho=0.9 B=16 N=4096 repeat=3/3 ID2=3.451
+[20/24] k=4 rho=0.9 B=16 N=16384 repeat=3/3 ID2=3.764
+[21/24] k=4 rho=0.9 B=256 N=4096 repeat=3/3 ID2=2.249
+[22/24] k=4 rho=0.9 B=256 N=16384 repeat=3/3 ID2=3.055
+[23/24] k=4 rho=0.9 B=4096 N=4096 repeat=3/3 ID2=10.756
+[24/24] k=4 rho=0.9 B=4096 N=16384 repeat=3/3 ID2=2.265

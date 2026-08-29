@@ -62,3 +62,43 @@ def test_hypothesis_3_requires_profile_match_and_replicated_effect() -> None:
     report = _interpret(config, summary_rows, profile_rows)
     assert "matched counterexample" in report
     assert "**Conclusion: PASS.**" in report
+
+
+def test_support_pool_report_requires_fixed_and_pooled_support_pure_recovery() -> None:
+    config = ExperimentConfig(
+        experiment="support-pool",
+        active_features=(1, 2),
+        support_pool_sizes=(1, 4),
+        id_sample_values=(128,),
+        repeats=1,
+    )
+    summary_rows = [
+        {
+            "experiment": "support-pool",
+            "condition": f"k={k};B={b};N=128",
+            "repeat": 0,
+            "k": k,
+            "support_pool_size": b,
+            "id_sample_count": 128,
+            "local_gride_id_rank_2": float(k),
+            "rank_2_relative_error_to_k": 0.0,
+            "rank_2_all_same_support_fraction": 1.0,
+        }
+        for k in (1, 2)
+        for b in (1, 4)
+    ]
+    profile_rows = [
+        {
+            "k": k,
+            "support_pool_size": b,
+            "id_sample_count": 128,
+            "rank": 2,
+            "gride_id": float(k),
+            "all_same_support_fraction": 1.0,
+        }
+        for k in (1, 2)
+        for b in (1, 4)
+    ]
+    report = _interpret(config, summary_rows, profile_rows)
+    assert "support-controlled local ID" in report
+    assert "**Conclusion: PASS.**" in report

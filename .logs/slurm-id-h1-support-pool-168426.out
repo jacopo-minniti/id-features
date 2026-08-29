@@ -1,0 +1,387 @@
+Starting support-pool experiment in /home/jacopominniti_sakana_ai/id-features
+Results: results/support-pool-168426
+Controls: D=32 m=256 k=1,2,4,8,16 B=1,4,16,64 N=1024,2048,4096 repeats=5 ranks<=64
+[1/300] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=1;N=1024
+[2/300] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=1;N=2048
+[3/300] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=1;N=4096
+[4/300] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=4;N=1024
+[5/300] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=4;N=2048
+[6/300] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=4;N=4096
+[7/300] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=16;N=1024
+[8/300] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=16;N=2048
+[9/300] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=16;N=4096
+[10/300] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=64;N=1024
+[11/300] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=64;N=2048
+[12/300] support-pool complete: repeat=1/5; D=32;m=256;k=1;rho=0;B=64;N=4096
+[13/300] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=1;N=1024
+[14/300] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=1;N=2048
+[15/300] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=1;N=4096
+[16/300] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=4;N=1024
+[17/300] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=4;N=2048
+[18/300] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=4;N=4096
+[19/300] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=16;N=1024
+[20/300] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=16;N=2048
+[21/300] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=16;N=4096
+[22/300] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=64;N=1024
+[23/300] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=64;N=2048
+[24/300] support-pool complete: repeat=1/5; D=32;m=256;k=2;rho=0;B=64;N=4096
+[25/300] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=1;N=1024
+[26/300] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=1;N=2048
+[27/300] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=1;N=4096
+[28/300] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=4;N=1024
+[29/300] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=4;N=2048
+[30/300] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=4;N=4096
+[31/300] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=16;N=1024
+[32/300] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=16;N=2048
+[33/300] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=16;N=4096
+[34/300] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=64;N=1024
+[35/300] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=64;N=2048
+[36/300] support-pool complete: repeat=1/5; D=32;m=256;k=4;rho=0;B=64;N=4096
+[37/300] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=1;N=1024
+[38/300] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=1;N=2048
+[39/300] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=1;N=4096
+[40/300] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=4;N=1024
+[41/300] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=4;N=2048
+[42/300] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=4;N=4096
+[43/300] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=16;N=1024
+[44/300] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=16;N=2048
+[45/300] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=16;N=4096
+[46/300] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=64;N=1024
+[47/300] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=64;N=2048
+[48/300] support-pool complete: repeat=1/5; D=32;m=256;k=8;rho=0;B=64;N=4096
+[49/300] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=1;N=1024
+[50/300] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=1;N=2048
+[51/300] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=1;N=4096
+[52/300] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=4;N=1024
+[53/300] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=4;N=2048
+[54/300] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=4;N=4096
+[55/300] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=16;N=1024
+[56/300] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=16;N=2048
+[57/300] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=16;N=4096
+[58/300] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=64;N=1024
+[59/300] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=64;N=2048
+[60/300] support-pool complete: repeat=1/5; D=32;m=256;k=16;rho=0;B=64;N=4096
+[61/300] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=1;N=1024
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[62/300] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=1;N=2048
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[63/300] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=1;N=4096
+[64/300] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=4;N=1024
+[65/300] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=4;N=2048
+[66/300] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=4;N=4096
+[67/300] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=16;N=1024
+[68/300] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=16;N=2048
+[69/300] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=16;N=4096
+[70/300] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=64;N=1024
+[71/300] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=64;N=2048
+[72/300] support-pool complete: repeat=2/5; D=32;m=256;k=1;rho=0;B=64;N=4096
+[73/300] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=1;N=1024
+[74/300] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=1;N=2048
+[75/300] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=1;N=4096
+[76/300] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=4;N=1024
+[77/300] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=4;N=2048
+[78/300] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=4;N=4096
+[79/300] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=16;N=1024
+[80/300] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=16;N=2048
+[81/300] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=16;N=4096
+[82/300] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=64;N=1024
+[83/300] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=64;N=2048
+[84/300] support-pool complete: repeat=2/5; D=32;m=256;k=2;rho=0;B=64;N=4096
+[85/300] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=1;N=1024
+[86/300] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=1;N=2048
+[87/300] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=1;N=4096
+[88/300] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=4;N=1024
+[89/300] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=4;N=2048
+[90/300] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=4;N=4096
+[91/300] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=16;N=1024
+[92/300] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=16;N=2048
+[93/300] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=16;N=4096
+[94/300] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=64;N=1024
+[95/300] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=64;N=2048
+[96/300] support-pool complete: repeat=2/5; D=32;m=256;k=4;rho=0;B=64;N=4096
+[97/300] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=1;N=1024
+[98/300] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=1;N=2048
+[99/300] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=1;N=4096
+[100/300] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=4;N=1024
+[101/300] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=4;N=2048
+[102/300] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=4;N=4096
+[103/300] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=16;N=1024
+[104/300] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=16;N=2048
+[105/300] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=16;N=4096
+[106/300] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=64;N=1024
+[107/300] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=64;N=2048
+[108/300] support-pool complete: repeat=2/5; D=32;m=256;k=8;rho=0;B=64;N=4096
+[109/300] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=1;N=1024
+[110/300] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=1;N=2048
+[111/300] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=1;N=4096
+[112/300] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=4;N=1024
+[113/300] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=4;N=2048
+[114/300] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=4;N=4096
+[115/300] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=16;N=1024
+[116/300] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=16;N=2048
+[117/300] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=16;N=4096
+[118/300] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=64;N=1024
+[119/300] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=64;N=2048
+[120/300] support-pool complete: repeat=2/5; D=32;m=256;k=16;rho=0;B=64;N=4096
+[121/300] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=1;N=1024
+[122/300] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=1;N=2048
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[123/300] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=1;N=4096
+[124/300] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=4;N=1024
+[125/300] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=4;N=2048
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[126/300] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=4;N=4096
+[127/300] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=16;N=1024
+[128/300] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=16;N=2048
+[129/300] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=16;N=4096
+[130/300] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=64;N=1024
+[131/300] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=64;N=2048
+[132/300] support-pool complete: repeat=3/5; D=32;m=256;k=1;rho=0;B=64;N=4096
+[133/300] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=1;N=1024
+[134/300] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=1;N=2048
+[135/300] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=1;N=4096
+[136/300] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=4;N=1024
+[137/300] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=4;N=2048
+[138/300] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=4;N=4096
+[139/300] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=16;N=1024
+[140/300] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=16;N=2048
+[141/300] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=16;N=4096
+[142/300] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=64;N=1024
+[143/300] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=64;N=2048
+[144/300] support-pool complete: repeat=3/5; D=32;m=256;k=2;rho=0;B=64;N=4096
+[145/300] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=1;N=1024
+[146/300] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=1;N=2048
+[147/300] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=1;N=4096
+[148/300] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=4;N=1024
+[149/300] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=4;N=2048
+[150/300] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=4;N=4096
+[151/300] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=16;N=1024
+[152/300] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=16;N=2048
+[153/300] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=16;N=4096
+[154/300] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=64;N=1024
+[155/300] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=64;N=2048
+[156/300] support-pool complete: repeat=3/5; D=32;m=256;k=4;rho=0;B=64;N=4096
+[157/300] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=1;N=1024
+[158/300] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=1;N=2048
+[159/300] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=1;N=4096
+[160/300] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=4;N=1024
+[161/300] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=4;N=2048
+[162/300] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=4;N=4096
+[163/300] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=16;N=1024
+[164/300] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=16;N=2048
+[165/300] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=16;N=4096
+[166/300] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=64;N=1024
+[167/300] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=64;N=2048
+[168/300] support-pool complete: repeat=3/5; D=32;m=256;k=8;rho=0;B=64;N=4096
+[169/300] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=1;N=1024
+[170/300] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=1;N=2048
+[171/300] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=1;N=4096
+[172/300] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=4;N=1024
+[173/300] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=4;N=2048
+[174/300] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=4;N=4096
+[175/300] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=16;N=1024
+[176/300] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=16;N=2048
+[177/300] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=16;N=4096
+[178/300] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=64;N=1024
+[179/300] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=64;N=2048
+[180/300] support-pool complete: repeat=3/5; D=32;m=256;k=16;rho=0;B=64;N=4096
+[181/300] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=1;N=1024
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[182/300] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=1;N=2048
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[183/300] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=1;N=4096
+[184/300] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=4;N=1024
+[185/300] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=4;N=2048
+[186/300] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=4;N=4096
+[187/300] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=16;N=1024
+[188/300] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=16;N=2048
+[189/300] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=16;N=4096
+[190/300] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=64;N=1024
+[191/300] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=64;N=2048
+[192/300] support-pool complete: repeat=4/5; D=32;m=256;k=1;rho=0;B=64;N=4096
+[193/300] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=1;N=1024
+[194/300] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=1;N=2048
+[195/300] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=1;N=4096
+[196/300] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=4;N=1024
+[197/300] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=4;N=2048
+[198/300] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=4;N=4096
+[199/300] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=16;N=1024
+[200/300] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=16;N=2048
+[201/300] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=16;N=4096
+[202/300] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=64;N=1024
+[203/300] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=64;N=2048
+[204/300] support-pool complete: repeat=4/5; D=32;m=256;k=2;rho=0;B=64;N=4096
+[205/300] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=1;N=1024
+[206/300] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=1;N=2048
+[207/300] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=1;N=4096
+[208/300] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=4;N=1024
+[209/300] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=4;N=2048
+[210/300] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=4;N=4096
+[211/300] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=16;N=1024
+[212/300] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=16;N=2048
+[213/300] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=16;N=4096
+[214/300] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=64;N=1024
+[215/300] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=64;N=2048
+[216/300] support-pool complete: repeat=4/5; D=32;m=256;k=4;rho=0;B=64;N=4096
+[217/300] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=1;N=1024
+[218/300] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=1;N=2048
+[219/300] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=1;N=4096
+[220/300] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=4;N=1024
+[221/300] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=4;N=2048
+[222/300] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=4;N=4096
+[223/300] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=16;N=1024
+[224/300] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=16;N=2048
+[225/300] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=16;N=4096
+[226/300] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=64;N=1024
+[227/300] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=64;N=2048
+[228/300] support-pool complete: repeat=4/5; D=32;m=256;k=8;rho=0;B=64;N=4096
+[229/300] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=1;N=1024
+[230/300] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=1;N=2048
+[231/300] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=1;N=4096
+[232/300] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=4;N=1024
+[233/300] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=4;N=2048
+[234/300] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=4;N=4096
+[235/300] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=16;N=1024
+[236/300] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=16;N=2048
+[237/300] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=16;N=4096
+[238/300] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=64;N=1024
+[239/300] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=64;N=2048
+[240/300] support-pool complete: repeat=4/5; D=32;m=256;k=16;rho=0;B=64;N=4096
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[241/300] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=1;N=1024
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[242/300] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=1;N=2048
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/id_estimation.py:409: RuntimeWarning: divide by zero encountered in divide
+  mus = self.distances[:, nn_ranks[1:]] / self.distances[:, nn_ranks[:-1]]
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:245: RuntimeWarning: invalid value encountered in multiply
+  tmp = np.multiply(factor1**2, factor2)
+[243/300] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=1;N=4096
+[244/300] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=4;N=1024
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[245/300] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=4;N=2048
+/home/jacopominniti_sakana_ai/id-features/.venv/lib/python3.12/site-packages/dadapy/_utils/utils.py:152: UserWarning: There are points with neighbours at 0 distance, meaning the dataset probably has identical points.
+This can cause problems in various routines.
+We suggest to either perform smearing of distances using
+remove_zero_dists()
+or remove identical points using
+remove_identical_points()).
+  warnings.warn(
+[246/300] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=4;N=4096
+[247/300] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=16;N=1024
+[248/300] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=16;N=2048
+[249/300] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=16;N=4096
+[250/300] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=64;N=1024
+[251/300] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=64;N=2048
+[252/300] support-pool complete: repeat=5/5; D=32;m=256;k=1;rho=0;B=64;N=4096
+[253/300] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=1;N=1024
+[254/300] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=1;N=2048
+[255/300] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=1;N=4096
+[256/300] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=4;N=1024
+[257/300] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=4;N=2048
+[258/300] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=4;N=4096
+[259/300] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=16;N=1024
+[260/300] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=16;N=2048
+[261/300] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=16;N=4096
+[262/300] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=64;N=1024
+[263/300] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=64;N=2048
+[264/300] support-pool complete: repeat=5/5; D=32;m=256;k=2;rho=0;B=64;N=4096
+[265/300] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=1;N=1024
+[266/300] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=1;N=2048
+[267/300] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=1;N=4096
+[268/300] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=4;N=1024
+[269/300] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=4;N=2048
+[270/300] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=4;N=4096
+[271/300] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=16;N=1024
+[272/300] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=16;N=2048
+[273/300] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=16;N=4096
+[274/300] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=64;N=1024
+[275/300] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=64;N=2048
+[276/300] support-pool complete: repeat=5/5; D=32;m=256;k=4;rho=0;B=64;N=4096
+[277/300] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=1;N=1024
+[278/300] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=1;N=2048
+[279/300] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=1;N=4096
+[280/300] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=4;N=1024
+[281/300] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=4;N=2048
+[282/300] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=4;N=4096
+[283/300] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=16;N=1024
+[284/300] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=16;N=2048
+[285/300] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=16;N=4096
+[286/300] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=64;N=1024
+[287/300] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=64;N=2048
+[288/300] support-pool complete: repeat=5/5; D=32;m=256;k=8;rho=0;B=64;N=4096
+[289/300] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=1;N=1024
+[290/300] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=1;N=2048
+[291/300] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=1;N=4096
+[292/300] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=4;N=1024
+[293/300] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=4;N=2048
+[294/300] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=4;N=4096
+[295/300] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=16;N=1024
+[296/300] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=16;N=2048
+[297/300] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=16;N=4096
+[298/300] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=64;N=1024
+[299/300] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=64;N=2048
+[300/300] support-pool complete: repeat=5/5; D=32;m=256;k=16;rho=0;B=64;N=4096
+Wrote results to results/support-pool-168426
+Wrote results/support-pool-168426/overview.png
+Read results/support-pool-168426/interpretation.md after inspecting gride_profiles.csv.

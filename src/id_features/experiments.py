@@ -15,9 +15,11 @@ from tqdm.auto import tqdm
 
 from .config import ExperimentConfig
 from .generator import (
+    make_support_bank,
     make_feature_matrix,
     mean_off_diagonal_dot_product,
     sample_sparse_representations,
+    sample_support_pool_representations,
 )
 from .metrics import measure_gride, measure_linear_accessibility
 
@@ -28,10 +30,15 @@ class Condition:
     feature_count: int
     k: int
     rho: float = 0.0
+    support_pool_size: int | None = None
+    id_sample_count: int | None = None
 
     @property
     def label(self) -> str:
-        return f"D={self.representation_dim};m={self.feature_count};k={self.k};rho={self.rho:g}"
+        base = f"D={self.representation_dim};m={self.feature_count};k={self.k};rho={self.rho:g}"
+        if self.support_pool_size is not None and self.id_sample_count is not None:
+            return f"{base};B={self.support_pool_size};N={self.id_sample_count}"
+        return base
 
 
 @dataclass(frozen=True)
@@ -56,6 +63,19 @@ def conditions_for(config: ExperimentConfig) -> list[Condition]:
             Condition(d, config.feature_count, k)
             for d in config.representation_dims
             for k in config.active_features
+        ]
+    if config.experiment == "support-pool":
+        return [
+            Condition(
+                config.representation_dim,
+                config.feature_count,
+                k,
+                support_pool_size=pool_size,
+                id_sample_count=n_samples,
+            )
+            for k in config.active_features
+            for pool_size in config.support_pool_sizes
+            for n_samples in config.id_sample_values
         ]
     return [
         Condition(config.representation_dim, config.feature_count, config.fixed_k, rho)
@@ -90,6 +110,11 @@ def _matrix_for_condition(
         matrix_rng = np.random.default_rng(
             np.random.SeedSequence([config.seed, repeat, condition.representation_dim])
         )
+        return make_feature_matrix(
+            condition.representation_dim, condition.feature_count, 0.0, matrix_rng
+        )
+    if config.experiment == "support-pool":
+        matrix_rng = np.random.default_rng(np.random.SeedSequence([config.seed, repeat, 73]))
         return make_feature_matrix(
             condition.representation_dim, condition.feature_count, 0.0, matrix_rng
         )
@@ -130,52 +155,69 @@ def run_experiment(
     try:
         for repeat in range(config.repeats):
             largest_capacity_matrix = None
+            support_banks: dict[int, np.ndarray] = {}
             if config.experiment == "load-capacity":
                 dictionary_rng = np.random.default_rng(np.random.SeedSequence([config.seed, repeat]))
                 largest_capacity_matrix = make_feature_matrix(
                     config.representation_dim, max(config.capacity_values), 0.0, dictionary_rng
                 )
+            elif config.experiment == "support-pool":
+                for k in config.active_features:
+                    bank_rng = np.random.default_rng(
+                        np.random.SeedSequence([config.seed, repeat, k, 79])
+                    )
+                    support_banks[k] = make_support_bank(
+                        config.feature_count, k, max(config.support_pool_sizes), bank_rng
+                    )
 
             for condition_index, condition in enumerate(conditions):
                 progress.set_postfix_str(f"repeat={repeat + 1}/{config.repeats}; {condition.label}")
                 matrix = _matrix_for_condition(
                     config, repeat, condition_index, condition, largest_capacity_matrix
                 )
-                sample_rng = np.random.default_rng(
-                    np.random.SeedSequence([config.seed, repeat, condition_index, 1])
-                )
-                id_h, _ = sample_sparse_representations(
-                    matrix, condition.k, config.n_id_samples, sample_rng
-                )
-                train_h, train_labels = sample_sparse_representations(
-                    matrix, condition.k, config.n_train, sample_rng
-                )
-                test_h, test_labels = sample_sparse_representations(
-                    matrix, condition.k, config.n_test, sample_rng
-                )
-
-                profile = measure_gride(id_h, config.gride_range_max, config.gride_n_jobs)
-                access = measure_linear_accessibility(train_h, train_labels, test_h, test_labels)
+                access = None
+                if config.experiment == "support-pool":
+                    assert condition.support_pool_size is not None
+                    assert condition.id_sample_count is not None
+                    supports = support_banks[condition.k][: condition.support_pool_size]
+                    support_rngs = [
+                        np.random.default_rng(
+                            np.random.SeedSequence(
+                                [config.seed, repeat, condition.k, support_index, 83]
+                            )
+                        )
+                        for support_index in range(condition.support_pool_size)
+                    ]
+                    id_h, support_ids = sample_support_pool_representations(
+                        matrix, supports, condition.id_sample_count, support_rngs
+                    )
+                    profile = measure_gride(
+                        id_h,
+                        config.gride_range_max,
+                        config.gride_n_jobs,
+                        support_ids=support_ids,
+                    )
+                else:
+                    sample_rng = np.random.default_rng(
+                        np.random.SeedSequence([config.seed, repeat, condition_index, 1])
+                    )
+                    id_h, _ = sample_sparse_representations(
+                        matrix, condition.k, config.n_id_samples, sample_rng
+                    )
+                    train_h, train_labels = sample_sparse_representations(
+                        matrix, condition.k, config.n_train, sample_rng
+                    )
+                    test_h, test_labels = sample_sparse_representations(
+                        matrix, condition.k, config.n_test, sample_rng
+                    )
+                    profile = measure_gride(id_h, config.gride_range_max, config.gride_n_jobs)
+                    access = measure_linear_accessibility(
+                        train_h, train_labels, test_h, test_labels
+                    )
                 for rank, scale, estimate, error in zip(
                     profile.ranks, profile.scales, profile.ids, profile.errors, strict=True
                 ):
-                    profile_rows.append(
-                        {
-                            "experiment": config.experiment,
-                            "condition": condition.label,
-                            "repeat": repeat,
-                            "representation_dim": condition.representation_dim,
-                            "feature_count": condition.feature_count,
-                            "k": condition.k,
-                            "rho": condition.rho,
-                            "rank": int(rank),
-                            "scale": float(scale),
-                            "gride_id": float(estimate),
-                            "gride_error": float(error),
-                        }
-                    )
-                summary_rows.append(
-                    {
+                    row: dict[str, object] = {
                         "experiment": config.experiment,
                         "condition": condition.label,
                         "repeat": repeat,
@@ -183,17 +225,76 @@ def run_experiment(
                         "feature_count": condition.feature_count,
                         "k": condition.k,
                         "rho": condition.rho,
+                        "support_pool_size": condition.support_pool_size or 0,
+                        "id_sample_count": condition.id_sample_count or config.n_id_samples,
+                        "samples_per_support": (
+                            condition.id_sample_count // condition.support_pool_size
+                            if condition.id_sample_count is not None
+                            and condition.support_pool_size is not None
+                            else 0
+                        ),
+                        "rank": int(rank),
+                        "scale": float(scale),
+                        "gride_id": float(estimate),
+                        "gride_error": float(error),
+                    }
+                    if profile.mean_same_support_fraction is not None:
+                        rank_index = int(np.flatnonzero(profile.ranks == rank)[0])
+                        assert profile.all_same_support_fraction is not None
+                        row["mean_same_support_neighbor_fraction"] = float(
+                            profile.mean_same_support_fraction[rank_index]
+                        )
+                        row["all_same_support_fraction"] = float(
+                            profile.all_same_support_fraction[rank_index]
+                        )
+                    profile_rows.append(row)
+                summary_row: dict[str, object] = {
+                        "experiment": config.experiment,
+                        "condition": condition.label,
+                        "repeat": repeat,
+                        "representation_dim": condition.representation_dim,
+                        "feature_count": condition.feature_count,
+                        "k": condition.k,
+                        "rho": condition.rho,
+                        "support_pool_size": condition.support_pool_size or 0,
+                        "id_sample_count": condition.id_sample_count or config.n_id_samples,
+                        "samples_per_support": (
+                            condition.id_sample_count // condition.support_pool_size
+                            if condition.id_sample_count is not None
+                            and condition.support_pool_size is not None
+                            else 0
+                        ),
                         "nominal_load_ratio_k_over_d": condition.k / condition.representation_dim,
                         "mean_feature_dot_product": mean_off_diagonal_dot_product(matrix),
                         "local_gride_id_rank_2": float(profile.ids[0]),
                         "estimated_load_ratio_id_over_d": float(profile.ids[0] / condition.representation_dim),
-                        "mean_feature_auroc": access.mean_auroc,
-                        "std_feature_auroc": access.std_auroc,
-                        "mean_feature_balanced_accuracy": access.mean_balanced_accuracy,
-                        "mean_normalized_signed_margin": access.mean_normalized_signed_margin,
-                        "std_normalized_signed_margin": access.std_normalized_signed_margin,
                     }
-                )
+                if access is not None:
+                    summary_row.update(
+                        {
+                            "mean_feature_auroc": access.mean_auroc,
+                            "std_feature_auroc": access.std_auroc,
+                            "mean_feature_balanced_accuracy": access.mean_balanced_accuracy,
+                            "mean_normalized_signed_margin": access.mean_normalized_signed_margin,
+                            "std_normalized_signed_margin": access.std_normalized_signed_margin,
+                        }
+                    )
+                else:
+                    assert profile.mean_same_support_fraction is not None
+                    assert profile.all_same_support_fraction is not None
+                    summary_row.update(
+                        {
+                            "rank_2_relative_error_to_k": abs(float(profile.ids[0]) - condition.k)
+                            / condition.k,
+                            "rank_2_mean_same_support_neighbor_fraction": float(
+                                profile.mean_same_support_fraction[0]
+                            ),
+                            "rank_2_all_same_support_fraction": float(
+                                profile.all_same_support_fraction[0]
+                            ),
+                        }
+                    )
+                summary_rows.append(summary_row)
                 completed_measurements += 1
                 progress.update(1)
                 if show_progress and not sys.stderr.isatty():
@@ -280,6 +381,127 @@ def _interpret_hypothesis_1(
             "",
             f"**Conclusion: {_status(conclusion)}.** "
             "Only a PASS supports the stated local-scale claim for this generator; otherwise the saved profiles show which prerequisite failed.",
+        ]
+    )
+    return lines
+
+
+def _interpret_support_pool(
+    config: ExperimentConfig,
+    summary_rows: list[dict[str, object]],
+    profile_rows: list[dict[str, object]],
+) -> list[str]:
+    """Test conditional recovery and diagnose when pooled neighborhoods mix supports."""
+
+    summary_means = list(_condition_means(summary_rows).values())
+    rank_2_rows = sorted(
+        summary_means,
+        key=lambda row: (int(row["k"]), int(row["support_pool_size"]), int(row["id_sample_count"])),
+    )
+    fixed_support = [row for row in rank_2_rows if int(row["support_pool_size"]) == 1]
+    fixed_errors = np.array([row["rank_2_relative_error_to_k"] for row in fixed_support])
+    fixed_support_pass = bool(np.all(fixed_errors <= 0.25))
+
+    purity_threshold = 0.90
+    support_pure = [
+        row
+        for row in rank_2_rows
+        if row["rank_2_all_same_support_fraction"] >= purity_threshold
+    ]
+    pooled_support_pure = [row for row in support_pure if int(row["support_pool_size"]) > 1]
+    support_pure_pass = bool(pooled_support_pure) and all(
+        row["rank_2_relative_error_to_k"] <= 0.25 for row in support_pure
+    )
+
+    profile_groups: dict[tuple[int, int, int, int], list[dict[str, object]]] = defaultdict(list)
+    for row in profile_rows:
+        key = (
+            int(row["k"]),
+            int(row["support_pool_size"]),
+            int(row["id_sample_count"]),
+            int(row["rank"]),
+        )
+        profile_groups[key].append(row)
+    profile_means = []
+    for (k, pool_size, n_samples, rank), group in profile_groups.items():
+        profile_means.append(
+            {
+                "k": k,
+                "support_pool_size": pool_size,
+                "id_sample_count": n_samples,
+                "rank": rank,
+                "gride_id": float(np.mean([float(row["gride_id"]) for row in group])),
+                "all_same_support_fraction": float(
+                    np.mean([float(row["all_same_support_fraction"]) for row in group])
+                ),
+            }
+        )
+    purities = np.array([row["all_same_support_fraction"] for row in profile_means])
+    relative_errors = np.array(
+        [abs(row["gride_id"] - row["k"]) / row["k"] for row in profile_means]
+    )
+    purity_error_rho = (
+        float("nan")
+        if np.ptp(purities) == 0.0 or np.ptp(relative_errors) == 0.0
+        else float(spearmanr(purities, relative_errors).statistic)
+    )
+
+    lines = [
+        "## Hypothesis 1b — support-controlled local ID",
+        "",
+        "This experiment crosses support-pool size B and sample count N, while retaining every GRIDE rank r. "
+        "Supports are nested across B, samples within each support are nested across N, and the dictionary is shared within a repeat.",
+        "",
+        f"- Fixed-support rank-2 recovery: `{_status(fixed_support_pass)}` "
+        "(every B=1 mean ID must be within 25% of k).",
+        f"- Pooled but support-pure rank-2 recovery: `{_status(support_pure_pass)}` "
+        f"({len(pooled_support_pure)} B>1 cells had at least {purity_threshold:.0%} fully support-pure rank-2 neighborhoods).",
+        f"- Spearman(neighborhood purity, absolute relative ID error), using every B/N/r cell: {_format(purity_error_rho)}. "
+        "This is a mechanism diagnostic, not a pass criterion.",
+        "",
+        "### Fixed-support rank-2 estimates",
+        "",
+        "| k | N | mean rank-2 ID | relative error |",
+        "| ---: | ---: | ---: | ---: |",
+    ]
+    for row in fixed_support:
+        lines.append(
+            f"| {int(row['k'])} | {int(row['id_sample_count'])} | "
+            f"{row['local_gride_id_rank_2']:.3f} | {row['rank_2_relative_error_to_k']:.1%} |"
+        )
+
+    lines.extend(
+        [
+            "",
+            "### Largest support pool with support-pure rank-2 neighborhoods",
+            "",
+            "| k | N | largest support-pure B | ID / k | fully pure neighborhoods |",
+            "| ---: | ---: | ---: | ---: | ---: |",
+        ]
+    )
+    for k in sorted({int(row["k"]) for row in rank_2_rows}):
+        for n_samples in sorted({int(row["id_sample_count"]) for row in rank_2_rows}):
+            candidates = [
+                row
+                for row in rank_2_rows
+                if int(row["k"]) == k
+                and int(row["id_sample_count"]) == n_samples
+                and row["rank_2_all_same_support_fraction"] >= purity_threshold
+            ]
+            best = max(candidates, key=lambda row: int(row["support_pool_size"]))
+            lines.append(
+                f"| {k} | {n_samples} | {int(best['support_pool_size'])} | "
+                f"{best['local_gride_id_rank_2'] / k:.3f} | "
+                f"{best['rank_2_all_same_support_fraction']:.1%} |"
+            )
+
+    conclusion = fixed_support_pass and support_pure_pass
+    lines.extend(
+        [
+            "",
+            f"**Conclusion: {_status(conclusion)}.** A PASS supports only the conditional finite-scale claim: "
+            "GRIDE recovers k when its local neighborhoods remain on one exact-k support. "
+            "It does not imply that pooled activation ID universally equals k.",
         ]
     )
     return lines
@@ -412,6 +634,8 @@ def _interpret(
     means = _condition_means(summary_rows)
     if config.experiment == "load-capacity":
         lines.extend(_interpret_hypothesis_1(config, means))
+    elif config.experiment == "support-pool":
+        lines.extend(_interpret_support_pool(config, summary_rows, profile_rows))
     elif config.experiment == "load-ratio":
         lines.extend(_interpret_hypothesis_2(config, means))
     else:
